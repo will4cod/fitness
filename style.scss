@@ -1,0 +1,1035 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,500;1,600&display=swap');
+
+$pink: #e6022d;
+$pink-light: #bb102f;
+
+@mixin button() {
+    height: 4rem;
+    width: 14rem;
+    background: transparent;
+    border: .2rem solid $pink;
+    outline: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: $pink;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover{
+        background: $pink;
+        color: #fff;
+    }
+}
+
+@mixin logo(){
+    margin: 0 1.5rem;
+
+    a{
+        text-decoration: none;
+
+        h1{
+            font-size: 3rem;
+            color: #fff;
+
+            span{
+                color: $pink;
+            }
+        }
+    }
+}
+
+*{
+    font-family: 'Exo 2', sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3{
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background: #f1f1f1;
+}
+
+.active{
+    background: #333;
+    box-shadow: 0 .1rem .3rem #000;
+    padding: 1rem;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem 3rem;
+    z-index: 2;
+
+    nav{
+
+        ul{
+            list-style: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            li{
+                margin: 1rem 1.5rem;
+
+                a{
+                    font-size: 2rem;
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 1rem;
+
+                    &:hover{
+                        background: $pink;
+                    }
+                }
+            }
+        }
+    }
+
+    .bx-menu{
+        font-size: 4rem;
+        color: $pink;
+        cursor: pointer;
+        margin: 0 2rem;
+        z-index: 3;   
+        display: none;
+    }
+
+    .logo{
+        @include logo();
+    }
+}
+
+#home{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    background: url(img/bg.jpg), linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    padding-top: 5rem;
+    position: relative;
+    text-align: center;
+
+    h1{
+        font-size: 7rem;
+        margin: 0 .5rem;
+        color: #fff;
+    }
+
+    h3{
+        font-size: 5rem;
+        color: $pink;
+        margin: 1rem 0;
+    }
+
+    button{
+        margin: 2rem 0;
+        @include button();
+    }
+
+    .icons{
+        position: absolute;
+        bottom: 3.5rem;
+        left: 2rem;
+        z-index: 1;
+
+        a{
+            text-decoration: none;
+            font-size: 3rem;
+            margin: 0 1rem;
+            color: #fff;
+
+            &:hover{
+                color: #333;
+            }
+        }
+    }
+
+    .shape-image{
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+
+        img{
+            height: 15rem;
+            width: 100vw;
+        }
+    }
+}
+
+.progress{
+    position: fixed;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+
+    ul{
+        list-style: none;
+        height: 400px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-flow: column;
+        position: relative;
+
+        li{
+            z-index: 1;
+
+            a{
+                display: block;
+                text-decoration: none;
+                height: 40px;
+                width: 40px;
+                background: #333;
+                color: white;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 40px;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+        }
+
+        .line{
+            position: absolute;
+            top: 40px;
+            left: 25px;
+            height: 0;
+            width: 10px;
+            background: #ff0000;
+            border-radius: 50px;
+        }
+    }
+
+}
+
+#feature{
+    padding-top: 4rem;
+    height: auto;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background: $pink-light;
+
+    h1{
+        color: #fff;
+        font-size: 4rem;
+        margin: 2rem 0;
+    }
+
+    .card-container{
+        width: 90vw;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+
+        .card{
+            width: 30rem;
+            height: 44rem;
+            margin: 2rem;
+            background: #fff;
+            transition: all 1s;
+
+
+            img{
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
+            }
+
+            .content{
+                height: 50%;
+                width: 100%;
+                text-align: center;
+
+                h1{
+                    color: $pink;
+                    font-size: 2.5rem;
+                    margin: 1rem 0;
+                }
+
+                p{
+                    font-size: 1.2rem;
+                    padding: .5rem;
+                }
+
+                button{
+
+                    @include button();
+                    margin: 1rem 0;
+                }
+            }
+
+            &:hover{
+                transform: translateY(-3rem);
+                box-shadow: 0 0 1rem #333;
+            }
+        }
+    }
+}
+
+#price{
+    padding-top: 4rem;
+    height: auto;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        color: $pink;
+        font-size: 4rem;
+        margin: 2rem 0;
+    }
+
+    span{
+        color: $pink;
+        font-style: italic;
+    }
+
+    .table{
+        display: grid;
+        grid-template-columns: minmax(400px, 2fr) 1fr 1fr 1fr;
+        padding: 1em 0;
+        text-align: center;
+
+        .item{
+            font-size: 2em;
+            font-weight: 500;
+            padding: 1em 0;
+            border-bottom: 1px solid gray;
+
+            &:first-of-type{
+                text-align: left;
+            }
+
+            &:nth-last-child(-n+4){
+                border: none;
+            }
+
+        }
+
+        .text{
+            text-align: left;
+        }
+
+        .green{
+            color: rgb(0, 204, 0);
+        }
+
+        .gray{
+            color: gray;
+        }
+    }
+
+    .table-small{
+        width: 90vw;
+        margin: 0 auto;
+        align-items: center;
+        display: none;
+
+        .item{
+            width: 100%;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid $pink-light;
+            padding: 1em;
+            margin: 2em 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3{
+                font-size: 3.5em;
+            }
+
+            ul{
+                list-style: none;
+                margin-top: .5em;
+
+                li{
+                    font-size: 2em;
+
+                    i{
+                        color: $pink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#about{
+    padding-top: 4rem;
+    height: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+
+    .image{
+        margin: 5rem 15rem;
+
+        img{
+            width: 25rem;
+        }
+    }
+
+    .content{
+        width: 90vw;
+        
+        h1{
+            font-size: 4rem;
+            margin: 3rem 0;
+            color: $pink;
+        }
+
+        p{
+            font-size: 1.8rem;
+            padding-right: 5rem;
+            line-height: 1.3;
+            width: 50vw;
+        }
+
+        .buttons{
+            padding-right: 2rem;
+
+            button{
+                @include button();
+                margin: 2rem 2rem 2rem 0;
+            }
+        }
+    }
+
+    .address{
+        display: flex;
+        align-items: center;
+
+        i{
+            font-size: 4em;
+            color: $pink;
+        }
+
+        p{
+            font-size: 2.5em;
+            margin-left: .8em;
+        }
+    }
+}
+
+#gallery{
+    padding-top: 4rem;
+    display: grid;
+    place-items: center;
+    height: auto;
+    width: 100vw;
+
+    h1{
+        font-size: 4rem;
+        color: $pink;
+        margin: 2rem 0;
+    }
+
+    .image-container{
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        .image{
+            height: 25rem;
+            width: 30rem;
+            margin: 2rem;
+            overflow: hidden;
+            position: relative;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .info{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                background: rgba(0,0,0,.7);
+                transition: all .6s;
+
+                button{
+                    @include button();
+                }
+            }
+
+            &:hover .info{
+                bottom: 0%;
+            }
+        }
+    }
+}
+
+#contact{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    background: url(img/gym.jpg), linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+
+    form{
+        display: flex;
+        flex-flow: column;
+
+        h1{
+            color: $pink;
+            font-size: 4rem;
+        }
+
+        input{
+            height: 4rem;
+            background: transparent;
+            margin: 2rem 0;
+            padding: 0 1rem;
+            border: .2rem solid $pink;
+            outline: none;
+            color: #fff;
+            text-transform: uppercase;
+            width: 35vw;
+
+            &::placeholder{
+                color: #ccc;
+            }
+
+            &:focus{
+                background: $pink-light;
+            }
+        }
+
+        input[type="submit"]{
+            @include button();
+            background: $pink;
+            color: #fff;
+
+            &:hover{
+                background: transparent;
+            }
+        }
+
+        textarea{
+            resize: none;
+            background: transparent;
+            outline: none;
+            padding: 1rem;
+            color: #fff;
+            text-transform: uppercase;
+            border: .2rem solid $pink;
+
+            &::placeholder{
+                color: #ccc;
+            }
+
+            &:focus{
+                background: $pink-light;
+            }
+        }
+    }
+
+    .image{
+
+        align-self: flex-end;
+
+        img{
+            height: 70vh;
+            margin-top: 16rem;
+        }
+    }
+}
+
+#footer{
+    height: auto;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background: #333;
+
+    .msg{
+        text-align: center;
+        color: #fff;
+        margin: 2rem 0;
+
+        span{
+            color: $pink;
+        }
+    }
+
+    .footer-container{
+        height: auto;
+        width: 90vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .brand{
+            margin: 3rem 0;
+            flex: 1 0 25rem;
+
+            .logo{
+                @include logo();
+            }
+
+            .icons{
+                display: flex;
+                flex-flow: column;
+    
+                a{
+                    text-decoration: none;
+                    color: $pink;
+                    font-size: 3rem;
+                    margin: .5rem 0;
+                    position: relative;
+    
+                    &::after{
+                        content: attr(data-text);
+                        position: absolute;
+                        top: .8rem;
+                        left: 3.5rem;
+                        font-family: sans-serif;
+                        font-style: italic;
+                        font-size: 1.5rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .contact-info{
+            flex: 1 0 25rem;
+
+            .info{
+                height: 16rem;
+                width: 5rem;
+                background: $pink;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                text-align: center;
+
+                a{
+                    font-size: 2rem;
+                    text-decoration: none;
+                    margin: 2rem 0;
+                    color: #fff;
+                    position: relative;
+
+                    &::after{
+                        content: attr(data-text);
+                        position: absolute;
+                        top: .5rem;
+                        left: 5.5rem;
+                        width: 20rem;
+                        text-align: left;
+                        font-family: sans-serif;
+                        font-style: italic;
+                        font-size: 1.5rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .letter{
+
+            flex: 1 0 25rem;
+            margin-top: 1rem;
+
+            h1{
+                font-size: 3rem;
+                color: $pink;
+            }
+
+            p{
+                color: #fff;
+                margin: 1rem 0;
+                font-size: 1.5rem;
+            }
+
+            input{
+                height: 4rem;
+                background: transparent;
+                margin: 2rem 0;
+                padding: 0 1rem;
+                border: .2rem solid $pink;
+                outline: none;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: bold;
+                width: 100%;
+    
+                &::placeholder{
+                    color: #ccc;
+                }
+    
+                &:focus{
+                    background: $pink;
+                }
+            }
+
+            input[type="submit"]{
+                @include button();
+                background: $pink;
+                color: #fff;
+    
+                &:hover{
+                    background: transparent;
+                }
+            }
+        }
+
+    }
+}
+
+
+// !-- sorteio page --!
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .introducao{
+        width: 40vw;
+        height: auto;
+        padding: 2rem 1rem;
+        background: #eeeeee;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        // display: none;
+
+        h1{
+            color: $pink;
+            font-size: 4rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            font-size: 2rem;
+            letter-spacing: .1rem;
+        }
+
+        form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            input{
+                height: 4rem;
+                background: transparent;
+                margin: 2rem auto;
+                padding: 0 1rem;
+                border: .2rem solid $pink;
+                outline: none;
+                color: #fff;
+                font-weight: bold;
+                width: 80%;
+
+    
+                &::placeholder{
+                    color: #ccc;
+                }
+    
+                &:focus{
+                    background: $pink;
+                }
+            }
+        }
+
+        button{
+            background: transparent;
+            border: none;
+            outline: none;
+
+            i{
+                color: $pink;
+                font-size: 4rem;
+                cursor: pointer;
+            }
+
+            &:hover{
+                
+                i{
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .sorteio{
+        width: 80vw;
+        background: #ccc;
+        padding-bottom: 2rem;
+        border-radius: 1rem;
+        margin-top: 4rem;
+        display: none;
+
+        h1{
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            padding: 1rem;
+            color: $pink;
+        }
+
+        p{
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            list-style-type: none;
+            
+            li{
+                width: 400px;
+                height: 200px;
+                background: gray;
+                // background-size: cover;
+                // background-position: center;
+                // background-attachment: fixed;
+                // background-blend-mode: multiply;
+                margin: 0 auto;
+                cursor: grab;
+                overflow: hidden;
+                position: relative;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    opacity: 0;
+                    
+                }
+
+                // span{
+                //     height: 50px;
+                //     width: 50px;
+                //     display: inline-block;
+                //     // background: transparent;
+                //     // background: red;
+                //     position: absolute;
+                //     border-radius: 50%;
+                //     pointer-events: none;
+                //     background: url(img/desconto20.png), blue;
+                //     background-size: cover;
+                //     background-position: center;
+                //     // background-attachment: fixed;
+                // }
+            }
+
+
+        }
+
+    }
+}
+
+// media queries
+
+@media (max-width:991px) {
+    html{
+        font-size: 50%;
+    }
+
+    #about{
+        width: 90vw;
+    }
+
+    .container{
+
+        .introducao{
+            width: 80vw;
+        }
+    }
+
+    #contact{
+        .image{
+    
+            img{
+                height: 50vh;
+                margin-top: 16rem;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    html{
+        font-size: 40%;
+    }
+
+    #about{
+        flex-flow: column;
+        align-items: center;
+        margin: 0 auto;
+
+        .image{
+
+            img{
+                width: 60vw;
+            }
+        }
+
+        .content{
+            text-align: center;
+
+            p{
+                padding: 2rem;
+                width: 100%;
+
+                &:last-child{
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+            }
+
+            .buttons{
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media (max-width:620px) {
+    header{
+        .bx-menu{
+            display: block;
+        }
+
+        nav{
+            position: fixed;
+            top: 0;
+            left: -200%;
+            height: 100vh;
+            width: 80vw;
+            background: #fff;
+            box-shadow: 30rem 0 0 rgba(0,0,0,.5);
+
+            ul{
+                height: 100%;
+                flex-flow: column;
+                justify-content: center;
+
+                li{
+                    margin: 2rem 0;
+
+                    a{
+                        margin: 0;
+                        font-size: 4rem;
+                        color: $pink;
+
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .progress{
+        display: none;
+    }
+
+    .nav-toggle{
+        left: 0;
+    }
+
+    #home{
+        
+        h1{
+            font-size: 6.5rem;
+        }
+        h3{
+            font-size: 4rem;
+        }
+        .icons{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    #price{
+
+        .table{
+            display: none;
+        }
+
+        .table-small{
+            display: block;
+        }
+    }
+
+    #contact{
+        .image{
+            display: none;
+        }
+        form{
+            input{
+                width: 90vw;
+            }
+        }
+    }
+}
